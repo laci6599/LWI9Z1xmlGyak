@@ -1,0 +1,12 @@
+<!DOCTYPE iskola [
+<!ELEMENT iskola (tanar+, tantargy+)>
+<!ELEMENT tanar (nev, szak)>
+<!ATTLIST tanar kod ID #REQUIRED>
+<!ELEMENT nev (#PCDATA) >
+<!ELEMENT szak (#PCDATA) >
+<!ELEMENT tantargy (tnev, osztaly) >
+<!ATTLIST tantargy kod ID #REQUIRED>
+<!ATTLIST tantargy oktato IDREF #IMPLIED>
+<!ELEMENT tnev (#PCDATA) >
+<!ELEMENT osztaly (#PCDATA) >
+]>
