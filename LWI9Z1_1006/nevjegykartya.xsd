@@ -21,6 +21,7 @@
     <xsd:complexType name="telefonszam">
         <xsd:sequence>
             <xsd:element name="korzet" type="xsd:int"/>
+            <xsd:element name="telefonszam" type="xsd:int"/>
         </xsd:sequence>
     </xsd:complexType>
 

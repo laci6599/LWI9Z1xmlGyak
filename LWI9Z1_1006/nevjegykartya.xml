@@ -18,8 +18,7 @@
             <weblap>https://schonherz.hu</weblap>
         </cég>
         <beosztas>CEO</beosztas>
-        <telefonszam>
-            <korzet>06</korzet>
+        <telefonszam korzet="46">
             205552830
         </telefonszam>
         <email>johndoe5555@gmail.com</email>
@@ -34,8 +33,7 @@
                 <hazszam>28</hazszam>
             </cim>
             <nev>Schönherz Iskolaszövetkezet</nev>
-            <telefonszam>
-                <korzet>06</korzet>
+            <telefonszam korzet="46">
                 1 296 2526
             </telefonszam>
             <weblap>https://schonherz.hu</weblap>
