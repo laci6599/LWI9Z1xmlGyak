@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:complexType name="nevjegykartyak">
+        <xsd:sequence>
+            <xsd:element name="nevjegykartya" type="nevjegykartya" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="nevjegykartya">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/>
+            <xsd:element name="nev" type="xsd:string"/>
+            <xsd:element name="ceg" type="ceg"/>
+            <xsd:element name="beosztas" type="xsd:string"/>
+            <xsd:element name="telefonszam" type="telefonszam"/>
+            <xsd:element name="email" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="telefonszam">
+        <xsd:sequence>
+            <xsd:element name="korzet" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="cim">
+        <xsd:sequence>
+            <xsd:element name="iranyitoszam" type="xsd:int"/>
+            <xsd:element name="varos" type="xsd:string"/>
+            <xsd:element name="utca" type="xsd:string"/>
+            <xsd:element name="hazszam" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ceg">
+        <xsd:sequence>
+            <xsd:element name="cim" type="cim"/>
+            <xsd:element name="nev" type="xsd:string"/>
+            <xsd:element name="telefonszam" type="telefonszam"/>
+            <xsd:element name="weblap" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>
