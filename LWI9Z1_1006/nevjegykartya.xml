@@ -11,8 +11,7 @@
                 <hazszam>152</hazszam>
             </cim>
             <nev>Schönherz Iskolaszövetkezet</nev>
-            <telefonszam>
-                <korzet>06</korzet>
+            <telefonszam korzet="46">
                 1 296 2526
             </telefonszam>
             <weblap>https://schonherz.hu</weblap>
