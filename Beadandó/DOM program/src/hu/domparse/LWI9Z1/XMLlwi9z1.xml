@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="XMLSchemaLWI9Z1.xsd">
+	
+    <theatre id="theatre1" principalid="principal1" showid="show1">
+		<name>
+			Miskolci Nemzeti Színház
+		</name>
+		<address>
+			<zipcode>
+				3525
+			</zipcode>
+			<country>
+				Magyarország
+			</country>
+			<city>
+				Miskolc
+			</city>
+		</address>
+	</theatre>
+
+	<principal id="principal1">
+		<name>
+			Béres Attila
+		</name>
+	</principal>
+    
+	<show id="show1" actorid="actor1" ticketid="ticket1">
+		<title>
+			Cirkuszhercegnő
+		</title>
+		<genre>
+			operett
+		</genre>
+		<length>
+			185 perc
+		</length>
+		<director>
+			Szabó Máté
+		</director>
+	</show>
+	<show id="show2" actorid="actor2" ticketid="ticket2">
+		<title>
+			A velencei kalmár
+		</title>
+		<genre>
+			vígjáték
+		</genre>
+		<length>
+			200 perc
+		</length>
+		<director>
+			Mohácsi János
+		</director>
+	</show>
+	<show id="show3" actorid="actor3" ticketid="ticket3">
+		<title>
+			Hegedűs a háztetőn
+		</title>
+		<genre>
+			musical
+		</genre>
+		<length>
+			185 perc
+		</length>
+		<director>
+			Béres Attila
+		</director>
+	</show>
+	
+	<actor id="actor1">
+        <name>
+			Papp Endre
+		</name>
+		<datedata>
+			<dateplace>
+				Debrecen
+			</dateplace>
+			<datetime>
+				1993-10-03
+			</datetime>
+		</datedata>
+        <dramagroup>
+			színművész
+		</dramagroup>
+	</actor>
+	<actor id="actor2">
+        <name>
+			Rózsa Krisztián
+		</name>
+		<datedata>
+			<dateplace>
+				Vásárosnamény
+			</dateplace>
+			<datetime>
+				1991-07-26
+			</datetime>
+		</datedata>
+        <dramagroup>
+			színművész
+		</dramagroup>
+	</actor>
+    <actor id="actor3">
+        <name>
+			Prohászka Fanni
+		</name>
+		<datedata>
+			<dateplace>
+				Budapest
+			</dateplace>
+			<datetime>
+				1993-07-23
+			</datetime>
+		</datedata>
+        <dramagroup>
+			színművésznő
+		</dramagroup>
+	</actor>
+
+	<ticket id="ticket1">
+		<category>
+			A
+		</category>
+        <price>
+			2400
+		</price>
+	</ticket>
+	<ticket id="ticket2">
+		<category>
+			B
+		</category>
+        <price>
+			2700
+		</price>
+	</ticket>
+	<ticket id="ticket3">
+		<category>
+			C
+		</category>
+        <price>
+			3000
+		</price>
+	</ticket>
+
+</data>
