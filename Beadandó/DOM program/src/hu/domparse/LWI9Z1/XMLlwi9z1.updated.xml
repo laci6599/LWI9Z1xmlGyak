@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<data xmlns="theatre" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="theatre XMLSchemaLWI9Z1.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><data xmlns="theatre" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="theatre XMLSchemaLWI9Z1.xsd">
     
     <theatre id="theatre1" principalid="principal1" showid="show1">
 		<name>
@@ -24,7 +23,7 @@
 		</name>
 	</principal>
     
-	<show id="show1" actorid="actor1" ticketid="ticket1">
+	<show actorid="actor1" id="show1" ticketid="ticket1">
 		<title>
 			Cirkuszhercegnő
 		</title>
@@ -38,7 +37,7 @@
 			Szabó Máté
 		</director>
 	</show>
-	<show id="show2" actorid="actor2" ticketid="ticket2">
+	<show actorid="actor2" id="show2" ticketid="ticket2">
 		<title>
 			A velencei kalmár
 		</title>
@@ -52,19 +51,11 @@
 			Mohácsi János
 		</director>
 	</show>
-	<show id="show3" actorid="actor3" ticketid="ticket3">
-		<title>
-			Hegedűs a háztetőn
-		</title>
-		<genre>
-			musical
-		</genre>
-		<length>
-			185 perc
-		</length>
-		<director>
-			Béres Attila
-		</director>
+	<show actorid="actor3" id="show3" ticketid="ticket3">
+		<title>Modify</title>
+		<genre>Más</genre>
+		<length>100 perc</length>
+		<director>Új rendező</director>
 	</show>
 	
 	<actor id="actor1">

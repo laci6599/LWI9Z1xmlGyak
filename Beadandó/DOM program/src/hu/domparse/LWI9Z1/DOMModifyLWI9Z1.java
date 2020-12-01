@@ -31,27 +31,29 @@ public class DOMModifyLWI9Z1 {
         transformer.transform(source, result);
 	}
 	
+	//Bekérjük a módosítani kívánt színáz id-ját
 	public static void UpdateTheatre(Document doc) throws TransformerException {
 
-		System.out.println("\nMelyik játékost szeretné módosítani?\n");
+		System.out.println("\nMelyik színházat szeretnĂ© mĂłdosĂ­tani?\n");
 
 		DOMReadLWI9Z1.ReadTheatre(doc);
 
 		String id = ReadId();
 
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Színház neve: ");
+		System.out.print("SzĂ­nhĂˇz neve: ");
 		String name = sc.nextLine();
-		System.out.print("Színház irányítószáma: ");
+		System.out.print("SzĂ­nhĂˇz irĂˇnyĂ­tĂłszĂˇma: ");
 		String zipcode = sc.nextLine();
-		System.out.print("Országa: ");
+		System.out.print("OrszĂˇga: ");
 		String country = sc.nextLine();
-		System.out.print("Városa: ");
+		System.out.print("VĂˇrosa: ");
 		String city = sc.nextLine();
 		
 		UpdateTheatreById(doc, id, name, zipcode, country, city);
 	}
 
+	//Módosítjuk a kívánt színházat
 	public static void UpdateTheatreById(Document doc, String id, String name, String zipcode, String country, String city) throws TransformerException {
 
 		NodeList nList = doc.getElementsByTagName("theatre");
@@ -77,17 +79,17 @@ public class DOMModifyLWI9Z1 {
 					Node node2 = element.getElementsByTagName("zipcode").item(0);
 					node2.setTextContent(zipcode);
 					
-					Node node4 = element.getElementsByTagName("country").item(0);
-					node4.setTextContent(country);
+					Node node3 = element.getElementsByTagName("country").item(0);
+					node3.setTextContent(country);
 					
-					Node node5 = element.getElementsByTagName("city").item(0);
-					node5.setTextContent(city);
+					Node node4 = element.getElementsByTagName("city").item(0);
+					node4.setTextContent(city);
 					
-					System.out.println("Színház ID:" + theatreid + "\tIgazgató ID:" + principalid + "\tElőadás ID:"
-							+ showid + "\tNév: " + node1.getTextContent() + "\tIrányítószám: " + node2.getTextContent()
-							+ "\tOrszág: " + node3.getTextContent() + "\tVáros:" + node4.getTextContent();
+					System.out.println("SzĂ­nhĂˇz ID:" + theatreid + "\tIgazgatĂł ID:" + principalid + "\tElĹ‘adĂˇs ID:"
+							+ showid + "\tNĂ©v: " + node1.getTextContent() + "\tIrĂˇnyĂ­tĂłszĂˇm: " + node2.getTextContent()
+							+ "\tOrszĂˇg: " + node3.getTextContent() + "\tVĂˇros:" + node4.getTextContent());
 
-					System.out.println("\nSikeres módosítás történt!\n");
+					System.out.println("\nSikeres mĂłdosĂ­tĂˇs tĂ¶rtĂ©nt!\n");
 					
 				}
 			}
@@ -98,17 +100,17 @@ public class DOMModifyLWI9Z1 {
 	
 	public static void UpdatePrincipal(Document doc) throws TransformerException {
 	
-		System.out.println("\nMelyik igazgatót szeretné módosítani?\n");
+		System.out.println("\nMelyik igazgatĂłt szeretnĂ© mĂłdosĂ­tani?\n");
 
 		DOMReadLWI9Z1.ReadPrincipal(doc);
 
 		String id = ReadId();
 
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Név: ");
+		System.out.print("NĂ©v: ");
 		String name = sc.nextLine();
 
-		UpdateSponsorById(doc, id, name);
+		UpdatePrincipalById(doc, id, name);
 		
 	}
 
@@ -131,9 +133,9 @@ public class DOMModifyLWI9Z1 {
 					Node node1 = element.getElementsByTagName("name").item(0);
 					node1.setTextContent(name);
 					
-					System.out.println("Igazgató ID:" + principalid + "\tNév: " + node1.getTextContent());
+					System.out.println("IgazgatĂł ID:" + principalid + "\tNĂ©v: " + node1.getTextContent());
 					
-					System.out.println("\nSikeres módosítás történt!\n");
+					System.out.println("\nSikeres mĂłdosĂ­tĂˇs tĂ¶rtĂ©nt!\n");
 					
 				}
 			}
@@ -144,20 +146,20 @@ public class DOMModifyLWI9Z1 {
 	
 	public static void UpdateShow(Document doc) throws TransformerException {
 
-		System.out.println("\nMelyik előadást szeretné módosítani?\n");
+		System.out.println("\nMelyik elĹ‘adĂˇst szeretnĂ© mĂłdosĂ­tani?\n");
 
 		DOMReadLWI9Z1.ReadShow(doc);
 		
 		String id = ReadId();
 
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Cím: ");
+		System.out.print("CĂ­m: ");
 		String title = sc.nextLine();
-		System.out.print("Műfaj: ");
+		System.out.print("MĹ±faj: ");
 		String genre = sc.nextLine();
-		System.out.print("Időtartam: ");
+		System.out.print("IdĹ‘tartam: ");
 		String length = sc.nextLine();
-		System.out.print("Rendező: ");
+		System.out.print("RendezĹ‘: ");
 		String director = sc.nextLine();
 	
 		UpdateShowById(doc, id, title, genre, length, director);
@@ -194,10 +196,10 @@ public class DOMModifyLWI9Z1 {
 					Node node4 = element.getElementsByTagName("director").item(0);
 					node4.setTextContent(director);
 
-					System.out.println("Előadás ID:" + id + "\tCím: " + node1.getTextContent() + "\tMűfaj: " + node2.getTextContent()
-							+ "\tIdőtartam: " + node3.getTextContent() + "\tRendező: " + node4.getTextContent());
+					System.out.println("ElĹ‘adĂˇs ID:" + id + "\tCĂ­m: " + node1.getTextContent() + "\tMĹ±faj: " + node2.getTextContent()
+							+ "\tIdĹ‘tartam: " + node3.getTextContent() + "\tRendezĹ‘: " + node4.getTextContent());
 										
-					System.out.println("\nSikeres módosítás történt!\n");
+					System.out.println("\nSikeres mĂłdosĂ­tĂˇs tĂ¶rtĂ©nt!\n");
 					
 				}
 			}
@@ -208,20 +210,20 @@ public class DOMModifyLWI9Z1 {
 	
 	public static void UpdateActor(Document doc) throws TransformerException {
 
-		System.out.println("\nMelyik előadót szeretné módosítani?\n");
+		System.out.println("\nMelyik elĹ‘adĂłt szeretnĂ© mĂłdosĂ­tani?\n");
 
 		DOMReadLWI9Z1.ReadActor(doc);
 
 		String id = ReadId();
 
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Név: ");
+		System.out.print("NĂ©v: ");
 		String name = sc.nextLine();
-		System.out.print("Születési hely: ");
+		System.out.print("SzĂĽletĂ©si hely: ");
 		String dateplace = sc.nextLine();
-		System.out.print("Születési idő: ");
+		System.out.print("SzĂĽletĂ©si idĹ‘: ");
 		String datetime = sc.nextLine();
-		System.out.print("Társulat: ");
+		System.out.print("TĂˇrsulat: ");
 		String dramagroup = sc.nextLine();
 	
 		UpdateActorById(doc, id, name, dateplace, datetime, dramagroup);
@@ -262,10 +264,10 @@ public class DOMModifyLWI9Z1 {
 
 					}
 
-					System.out.println("Előadó ID:" + id + "\tNév: " + node1.getTextContent() + "\tTársulat: " + node2.getTextContent()
-							+ "\tSzületési adatok: " + dateplace + "." + datetime);
+					System.out.println("ElĹ‘adĂł ID:" + id + "\tNĂ©v: " + node1.getTextContent() + "\tTĂˇrsulat: " + node2.getTextContent()
+							+ "\tSzĂĽletĂ©si adatok: " + dateplace + "." + datetime);
 										
-					System.out.println("\nSikeres módosítás történt!\n");
+					System.out.println("\nSikeres mĂłdosĂ­tĂˇs tĂ¶rtĂ©nt!\n");
 					
 				}
 			}
@@ -276,23 +278,23 @@ public class DOMModifyLWI9Z1 {
 	
 	public static void UpdateTicket(Document doc) throws TransformerException {
 
-		System.out.println("\nMelyik jegyet szeretné módosítani?\n");
+		System.out.println("\nMelyik jegyet szeretnĂ© mĂłdosĂ­tani?\n");
 
-		DOMReadLWI9Z1.ReadTeam(doc);
+		DOMReadLWI9Z1.ReadTicket(doc);
 		
 		String id = ReadId();
 
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Kategória: ");
+		System.out.print("KategĂłria: ");
 		String category = sc.nextLine();
-		System.out.print("Ár: ");
+		System.out.print("Ă�r: ");
 		String price = sc.nextLine();
 		
-		UpdateTeamById(doc, id, category, price);
+		UpdateTicketById(doc, id, category, price);
 		
 	}
 
-	public static void UpdateTicketById(Document doc, String id, String category, String price throws TransformerException {
+	public static void UpdateTicketById(Document doc, String id, String category, String price) throws TransformerException {
 
 		NodeList nList = doc.getElementsByTagName("ticket");
 		
@@ -314,9 +316,9 @@ public class DOMModifyLWI9Z1 {
 					Node node2 = element.getElementsByTagName("price").item(0);
 					node2.setTextContent(price);
 					
-					System.out.println("Ticket ID:" + ticketid + "\tKategória: " + node1.getTextContent() + "\tÁr: " + node2.getTextContent());
+					System.out.println("Ticket ID:" + ticketid + "\tKategĂłria: " + node1.getTextContent() + "\tĂ�r: " + node2.getTextContent());
 					
-					System.out.println("\nSikeres módosítás történt!\n");
+					System.out.println("\nSikeres mĂłdosĂ­tĂˇs tĂ¶rtĂ©nt!\n");
 					
 				}
 			}

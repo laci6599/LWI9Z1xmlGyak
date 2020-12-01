@@ -25,7 +25,7 @@ public class DOMReadLWI9Z1 {
 			DocumentBuilder dBuilder = factory.newDocumentBuilder();
 			Document doc = dBuilder.parse(xmlFile);
 			doc.getDocumentElement().normalize();		
-			System.out.println("Nagy László LWI9Z1 XML féléves feladat");
+			System.out.println("Nagy LĂˇszlĂł LWI9Z1 XML fĂ©lĂ©ves feladat");
 			Action(doc);	   
 	       }catch (ParserConfigurationException pce) {
 	           pce.printStackTrace();
@@ -39,9 +39,9 @@ public class DOMReadLWI9Z1 {
 	}
 
 	public static void Action(Document doc) throws TransformerException {
-		System.out.println("\nOlvasni vagy modosítani szeretne?");
-		System.out.println("1 - olvasás");
-		System.out.println("2 - módosítás");
+		System.out.println("\nOlvasni vagy modosĂ­tani szeretne?");
+		System.out.println("1 - olvasĂˇs");
+		System.out.println("2 - mĂłdosĂ­tĂˇs");
 		int action = ReadCategory();
 
 		switch (action) {
@@ -58,26 +58,29 @@ public class DOMReadLWI9Z1 {
 
 	}
 
+	//Kategória beolvasása
 	public static int ReadCategory() {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("\nAdja meg a sorszámot:");
+		System.out.print("\nAdja meg a sorszĂˇmot:");
 		int readCategory = scan.nextInt();
 		return readCategory;
 	}
 	
+	//Módosítani kívánt adat sorszámának bekérése
 	public static void Update(Document doc) throws TransformerException {
-		System.out.println("\nXML Módosítás\n");
-		System.out.println("Kérem adja meg mit szeretne módosítani");
-		System.out.println("1 - színház\n2 - igazgató\n3 - előadás\n4 - előadó\n5 - jegy");
+		System.out.println("\nXML MĂłdosĂ­tĂˇs\n");
+		System.out.println("KĂ©rem adja meg mit szeretne mĂłdosĂ­tani");
+		System.out.println("1 - szĂ­nhĂˇz\n2 - igazgatĂł\n3 - elĹ‘adĂˇs\n4 - elĹ‘adĂł\n5 - jegy");
 		int category = 0;
 		category = ReadCategory();
 		ShowElementUpdates(category, doc);
 	}
 	
+	//Olvasni kívánt adatok sorszámának bekérése
 	public static void Read(Document doc) {
-		System.out.println("\nXML Olvasás\n");
-		System.out.println("Kérem adja meg mit szeretne olvasni");
-		System.out.println("1 - színház\n2 - igazgató\n3 - előadás\n4 - előadó\n5 - jegy");
+		System.out.println("\nXML OlvasĂˇs\n");
+		System.out.println("KĂ©rem adja meg mit szeretne olvasni");
+		System.out.println("1 - szĂ­nhĂˇz\n2 - igazgatĂł\n3 - elĹ‘adĂˇs\n4 - elĹ‘adĂł\n5 - jegy");
 		int category = 0;
 		category = ReadCategory();
 		ShowCategoryElements(category, doc);
@@ -157,9 +160,11 @@ public class DOMReadLWI9Z1 {
 				for (int j = 0; j < nList.getLength(); j++) {
 
 					Node nnode1 = element.getElementsByTagName("zipcode").item(0);
+					Node cnode1 = null;
 					country = cnode1.getTextContent();
 
 					Node nnode2 = element.getElementsByTagName("country").item(0);
+					Node cnode2 = null;
 					country = cnode2.getTextContent();
 					
 					Node cnode3 = element.getElementsByTagName("city").item(0);
@@ -167,7 +172,7 @@ public class DOMReadLWI9Z1 {
 
 				}
 
-				System.out.println("Színház id:" + theatreid + "\tNev: " + name + "\tIrsz: " + zipcode + "\tOrszág: " + country + "\tVáros: " + city);
+				System.out.println("SzĂ­nhĂˇz id:" + theatreid + "\tNev: " + name + "\tIrsz: " + zipcode + "\tOrszĂˇg: " + country + "\tVĂˇros: " + city);
 			}
 		}
 
@@ -190,7 +195,7 @@ public class DOMReadLWI9Z1 {
 				Node node1 = element.getElementsByTagName("name").item(0);
 				String name = node1.getTextContent();
 
-				System.out.println("Igazgató id:" + principalid + "\tNev: " + name);
+				System.out.println("IgazgatĂł id:" + principalid + "\tNev: " + name);
 			}
 		}
 
@@ -215,16 +220,16 @@ public class DOMReadLWI9Z1 {
 				Node node1 = element.getElementsByTagName("title").item(0);
 				String title = node1.getTextContent();
 
-				Node node1 = element.getElementsByTagName("genre").item(0);
-				String genre = node1.getTextContent();
+				Node node2 = element.getElementsByTagName("genre").item(0);
+				String genre = node2.getTextContent();
 
-				Node node1 = element.getElementsByTagName("length").item(0);
-				String length = node1.getTextContent();
+				Node node3 = element.getElementsByTagName("length").item(0);
+				String length = node3.getTextContent();
 
-				Node node1 = element.getElementsByTagName("director").item(0);
-				String director = node1.getTextContent();
+				Node node4 = element.getElementsByTagName("director").item(0);
+				String director = node4.getTextContent();
 
-				System.out.println("Előadás id:\t" + showid + "\tCím:\t" + title + "\tMűfaj:\t" + genre + "\tIdőtartam:\t" + length + "\tRendező:\t" + director);
+				System.out.println("ElĹ‘adĂˇs id:\t" + showid + "\tCĂ­m:\t" + title + "\tMĹ±faj:\t" + genre + "\tIdĹ‘tartam:\t" + length + "\tRendezĹ‘:\t" + director);
 			}
 		}
 	}
@@ -264,8 +269,8 @@ public class DOMReadLWI9Z1 {
 
 				}
 
-				System.out.println("Előadó id:" + actorid + "\tNév: " + name + "\tTársulat: " + dramagroup
-						+ "\tSzületési hely: " + dateplace + "\tSzületési idő: " + datetime);
+				System.out.println("ElĹ‘adĂł id:" + actorid + "\tNĂ©v: " + name + "\tTĂˇrsulat: " + dramagroup
+						+ "\tSzĂĽletĂ©si hely: " + dateplace + "\tSzĂĽletĂ©si idĹ‘: " + datetime);
 			}
 		}
 	}
@@ -287,10 +292,10 @@ public class DOMReadLWI9Z1 {
 				Node node1 = element.getElementsByTagName("category").item(0);
 				String category = node1.getTextContent();
 
-				Node node1 = element.getElementsByTagName("price").item(0);
-				String price = node1.getTextContent();
+				Node node2 = element.getElementsByTagName("price").item(0);
+				String price = node2.getTextContent();
 
-				System.out.println("Jegy id:" + ticketid + "\tKategória: " + category + "\tÁr: " + price);
+				System.out.println("Jegy id:" + ticketid + "\tKategĂłria: " + category + "\tĂ�r: " + price);
 			}
 		}
 
